@@ -52,6 +52,10 @@ abstract class BaseActivity : AppCompatActivity() {
 
             statusbarbg.layoutParams.height = statusBarInsets.top
 
+            val layoutParams = statusbarbg.layoutParams as ViewGroup.MarginLayoutParams
+            layoutParams.leftMargin = insets.left;
+            layoutParams.rightMargin = insets.right;
+
 
             v.updateLayoutParams<ViewGroup.MarginLayoutParams> {
                 topMargin = insets.top
