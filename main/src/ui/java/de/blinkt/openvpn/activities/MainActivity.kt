@@ -32,7 +32,8 @@ class MainActivity : BaseActivity() {
 
         mPagerAdapter = ScreenSlidePagerAdapter(supportFragmentManager, lifecycle, this)
 
-        /* Toolbar and slider should have the same elevation */disableToolbarElevation()
+        /* Toolbar and slider should have the same elevation */
+        disableToolbarElevation()
         mPagerAdapter.addTab(R.string.vpn_list_title, VPNProfileList::class.java)
         mPagerAdapter.addTab(R.string.graph, GraphFragment::class.java)
         mPagerAdapter.addTab(R.string.generalsettings, GeneralSettings::class.java)

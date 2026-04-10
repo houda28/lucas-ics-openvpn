@@ -117,7 +117,7 @@ class VPNPreferences : BaseActivity() {
 
         val fragmentArguments = Bundle()
         fragmentArguments.putString("$packageName.profileUUID", mProfileUUID)
-        mPagerAdapter.setFragmentArgs(fragmentArguments)
+        mPagerAdapter.fragmentArguments = fragmentArguments
 
         if (mProfile!!.mUserEditable) {
             mPagerAdapter.addTab(R.string.basic, Settings_Basic::class.java)

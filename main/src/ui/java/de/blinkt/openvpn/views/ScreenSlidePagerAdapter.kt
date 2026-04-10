@@ -29,11 +29,7 @@ class ScreenSlidePagerAdapter(fm: FragmentManager, lc: Lifecycle, c: Context) :
         fm, lc
     ) {
     private val res: Resources = c.resources
-    private var mFragmentArguments: Bundle? = null
-
-    fun setFragmentArgs(fragmentArguments: Bundle?) {
-        mFragmentArguments = fragmentArguments
-    }
+    var fragmentArguments: Bundle? = null
 
     internal class Tab(var fragmentClass: Class<out Fragment>, var mName: String)
 
@@ -43,7 +39,7 @@ class ScreenSlidePagerAdapter(fm: FragmentManager, lc: Lifecycle, c: Context) :
     override fun createFragment(position: Int): Fragment {
         try {
             val fragment = mTabs[position].fragmentClass.newInstance()
-            if (mFragmentArguments != null) fragment.arguments = mFragmentArguments
+            if (fragmentArguments != null) fragment.arguments = fragmentArguments
 
             return fragment
         } catch (e: InstantiationException) {
